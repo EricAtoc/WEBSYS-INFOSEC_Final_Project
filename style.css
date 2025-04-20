@@ -1,0 +1,771 @@
+/* style.css - Weather Wise Caloocan */
+
+/* --- Global Reset & Defaults --- */
+* {
+    box-sizing: border-box; /* Makes layout math easier */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    background-color: #1a3a3a; /* Default background */
+}
+
+/* Default background for main app pages */
+body:not(.landing-page):not(.tips-page) {
+     background-color: #204848;
+}
+
+h2, h3, h4 {
+    color: #e0e0e0;
+    margin-top: 0;
+    margin-bottom: 0.5em; /* Add some default spacing */
+}
+
+a {
+    color: #87ceeb; /* Light sky blue for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+}
+
+ul ul {
+     padding-left: 20px; /* Indent nested lists */
+     list-style: disc; /* Add bullets back to nested lists */
+     margin-top: 5px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+img {
+    max-width: 100%; /* Prevent images from overflowing containers */
+    height: auto;   /* Maintain aspect ratio */
+    display: block; /* Remove extra space below inline images */
+}
+
+button {
+    font-family: inherit; /* Ensure buttons use the body font */
+    cursor: pointer; /* Standard pointer for clickable items */
+}
+
+
+/* --- Landing Page Specific Styles (`index.html`) --- */
+body.landing-page {
+    background: linear-gradient(to bottom, #2a5b5b, #1a3a3a);
+    background-color: #204848; /* Fallback */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Add some padding */
+}
+
+/* --- Tips Page Specific Styles (`tips.html`) --- */
+body.tips-page {
+    background: linear-gradient(to bottom, #2a5b5b, #1a3a3a);
+    background-color: #204848; /* Fallback */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.tips-container {
+    background-color: rgba(61, 122, 122, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    margin-top: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tips-list {
+    margin: 0 0 30px 0;
+    text-align: left;
+}
+
+.tips-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.tip-icon {
+    /* Using pseudo-element for icon is often cleaner than span */
+    display: inline-block; /* Needed for sizing */
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    content: url('assets/icon-arrow-right-green.png');
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.proceed-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px 10px 15px;
+    background-color: #1e4b4b;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: right; /* Keep the float */
+}
+
+.proceed-btn:hover {
+    background-color: #2a6b6b;
+}
+
+.proceed-btn img {
+     width: 30px;
+     height: 30px;
+     margin-right: 10px;
+     background-color: #fff; /* White background for icon */
+     border-radius: 50%;
+     padding: 2px;
+     box-sizing: content-box; /* Adjust box-sizing if padding affects size */
+}
+
+.tips-container::after { /* Clear the float */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* --- Logo Styles --- */
+.logo-img { /* Base class, height: auto; and max-width: 100% inherited */ }
+.large-logo { max-width: 90%; max-height: 1000px; /* Adjusted for better scaling */ }
+.medium-logo { max-width: 40%; max-height: 100px; margin-bottom: 20px;}
+.inline-logo { height: 1.2em; vertical-align: middle; margin: 0 5px; display: inline-block; /* Ensure it behaves like text */}
+.header-logo { height: 50px; width: auto; margin-right: 15px; /* Slightly smaller header logo */ }
+.climate-logo { max-width: 100%; width: 350px; /* Use width control */ display: block; margin: 10px auto 20px auto; border-radius: 8px;}
+
+/* --- General Button Styles --- */
+.get-started-btn {
+    display: inline-flex; /* Use inline-flex for alignment */
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    background-color: #3d7a7a;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.get-started-btn:hover {
+    background-color: #4a8a8a;
+}
+
+/* Using Font Awesome icon directly in HTML is better than img here */
+/* Example: <a href="tips.html" class="get-started-btn"><i class="fa-solid fa-globe"></i> Get Started</a> */
+/* If using img: */
+.get-started-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+
+/* --- Main Header (`main.html`) --- */
+.main-header {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #2a5b5b, #3d7a7a);
+    padding: 5px 10px 5px 20px;
+    position: relative; /* Needed for absolute positioned pseudo-elements */
+    min-height: 60px; /* Use min-height for flexibility */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.logo-area {
+    /* No extra margin needed if header uses space-between/gap */
+}
+
+.main-nav {
+    flex-grow: 1; /* Allow nav to take available space */
+    margin-left: 15px; /* Add space between logo and nav */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    gap: 10px; /* Spacing between nav items */
+}
+
+.main-nav li {
+     margin-bottom: 0; /* Remove default li margin */
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    background-color: #2a5b5b;
+    color: #e0e0e0;
+    border: none;
+    padding: 8px 18px; /* Slightly adjusted padding */
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.95em; /* Slightly smaller font */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Icon styling using Font Awesome <i> */
+.nav-button i {
+    margin-right: 8px;
+    font-size: 1.1em;
+    width: 1.2em; /* Ensure space for icon */
+    text-align: center;
+    vertical-align: middle;
+    color: #b0d8d8; /* Slightly lighter icon color */
+    transition: color 0.3s ease;
+}
+
+.nav-button:hover,
+.nav-button.active {
+    background-color: #1a3a3a; /* Darker background on hover/active */
+    color: #ffffff; /* White text on hover/active */
+}
+
+.nav-button:hover i,
+.nav-button.active i {
+    color: #ffffff; /* White icon on hover/active */
+}
+
+
+/* --- Category Dropdown --- */
+.dropdown {
+    position: relative; /* Context for absolute dropdown */
+    display: inline-block; /* Keep it inline with other buttons */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default, JS handles display */
+    position: absolute;
+    background-color: #2a5b5b;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 100; /* Ensure dropdown is above other content */
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-top: 5px; /* Space below button */
+    left: 0; /* Align with the left edge of the category button */
+}
+
+.dropdown-content button {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block; /* Make buttons fill width */
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95em;
+}
+
+.dropdown-content button:hover {
+    background-color: #3d7a7a; /* Highlight on hover */
+}
+
+/* Remove the arrow - it complicates layout and responsiveness */
+.nav-end-arrow {
+   display: none;
+}
+
+/* --- Main Content Area (`main.html`) --- */
+.main-content {
+    padding: 25px; /* Slightly reduced padding */
+    position: relative; /* Needed for absolute positioned children */
+    background-color: #204848; /* Base background for content area */
+    min-height: calc(100vh - 70px); /* Adjust based on actual header height */
+    overflow: hidden; /* Prevent background elements from spilling */
+}
+
+.content-section {
+    /* display: none; Controlled by JS + Debug rules below */
+    animation: fadeIn 0.5s ease-in-out;
+    position: relative; /* Needed for z-index stacking */
+    z-index: 1; /* Base level for content sections */
+    width: 100%; /* Ensure sections take full width */
+}
+
+.content-section.active {
+   /* display: block; Controlled by JS + Debug rules below */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); } /* Add slight upward motion */
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Content Boxes --- */
+.content-box {
+    background-color: rgba(42, 91, 91, 0.7); /* Teal background with transparency */
+    padding: 20px 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    backdrop-filter: blur(4px); /* Subtle blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    position: relative; /* For potential ::before/::after or contained absolute elements */
+    z-index: 2; /* Above content-section base */
+}
+
+.content-box:last-child {
+    margin-bottom: 0; /* Remove margin from the last box in a section */
+}
+
+.full-width {
+    /* Not strictly needed if parent (.content-section) is full width */
+}
+
+/* --- Specific Section Styles --- */
+
+/* Welcome Section */
+#welcome-content {
+    display: grid; /* Use grid for easier layout */
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 30px;
+    align-items: start; /* Align items to the top */
+}
+.welcome-box, .mission-vision-box {
+    /* flex: 1; No longer needed with grid */
+}
+.mission-vision-box h3 {
+    margin-top: 15px; /* Add space above mission/vision titles */
+}
+
+/* About Us Section */
+.about-box h3 { margin-top: 25px; margin-bottom: 10px; }
+.values-section {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+    align-items: center;
+    background-color: rgba(0,0,0,0.1);
+    padding: 20px; /* Increased padding */
+    border-radius: 10px;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+.value-image-box {
+    flex-basis: 150px; /* Fixed basis for image */
+    flex-grow: 0;
+    text-align: center;
+}
+.value-image-box img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+    background-color: #1f4e4e;
+    padding: 10px;
+    border-radius: 8px;
+}
+.value-text-box {
+    flex-basis: calc(100% - 170px); /* Take remaining space */
+    flex-grow: 1;
+    min-width: 250px; /* Ensure text box has minimum width */
+}
+.value-text-box h4 { margin-bottom: 8px; color: #aaeaea;}
+.value-text-box ul { padding-left: 0; list-style: none; }
+.value-text-box ul li { margin-bottom: 10px; }
+.comment-section { margin-top: 30px; }
+.comment-section label { display: block; margin-bottom: 5px; font-weight: bold; }
+.comment-section textarea {
+    width: 100%;
+    min-height: 80px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    font-family: inherit;
+    resize: vertical; /* Allow vertical resize */
+}
+
+/* Pollution Section */
+.sub-nav-header {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+    margin-bottom: 0; /* Align directly with container */
+    position: relative;
+    z-index: 5; /* Above content boxes */
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.sub-nav-header i { /* Style icon in header */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.pollution-container {
+    display: flex;
+    gap: 20px;
+    background-color: rgba(42, 91, 91, 0.5); /* Apply container background */
+    padding: 20px;
+    border-radius: 0 15px 15px 15px; /* Match header rounding */
+    position: relative; /* Needed for background image */
+    overflow: hidden; /* Keep background contained */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.side-nav {
+    flex-basis: 60px; /* Initial width */
+    flex-shrink: 0; /* Don't shrink */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
+    border-radius: 10px;
+    align-self: flex-start; /* Align to top */
+    height: fit-content; /* Size to content */
+    z-index: 4; /* Above background, below header */
+}
+
+.side-nav-item {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: background-color 0.2s ease, border-color 0.2s ease; /* Smooth transition */
+    user-select: none; /* Prevent text selection */
+}
+
+.side-nav-item.active,
+.side-nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Brighter for active/hover */
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.side-nav .dots {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+}
+
+.pollution-main {
+    flex-grow: 1; /* Take remaining space */
+    min-width: 280px; /* Ensure it doesn't get too squished */
+    z-index: 3; /* Above background */
+}
+
+/* Pollution Page Switching */
+.pollution-main .pollution-page {
+    display: none; /* Hide all pollution pages by default */
+    animation: fadeIn 0.4s ease-in-out; /* Optional fade-in */
+}
+.pollution-main .pollution-page.active {
+    display: block; /* Show the active pollution page */
+}
+
+/* AQI Specific Styles */
+.aqi-box h3 { margin-bottom: 5px; }
+.update-time { font-size: 0.85em; color: #ccc; margin-bottom: 20px; }
+.aqi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    gap: 15px;
+}
+.aqi-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.aqi-item i.aqi-icon { /* Target specific icons */
+    font-size: 1.8em; /* Icon size */
+    margin-right: 15px;
+    width: 1.5em; /* Ensure space */
+    text-align: center;
+    color: #b0d8d8; /* Icon color */
+}
+.aqi-item > div:nth-child(2) { /* Pollutant name */
+    flex-grow: 1;
+    font-size: 0.9em;
+}
+.aqi-item .value { font-weight: bold; font-size: 1.1em; margin: 0 10px; }
+.aqi-item .unit { font-size: 0.8em; font-weight: normal; color: #ccc; }
+.aqi-item .arrow i { font-size: 1.2em; color: #aaa; } /* Arrow icon */
+
+/* Other Pollution Content */
+.live-aqi-summary, .reference-box, .video-box, .advice-box { margin-top: 20px; }
+.advice-box h4, .video-box h4, .reference-box h4 { margin-bottom: 15px; }
+.advice-box ul { padding-left: 20px; list-style: disc; } /* Use bullets for advice */
+.video-box p { margin-bottom: 10px; word-break: break-all; } /* Link wrapping */
+.reference-box { background-color: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; }
+.reference-box a { word-break: break-all; } /* Link wrapping */
+
+/* Pollution Background Image */
+.background-image-container.pollution-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('assets/caloocan-skyline-blurry.jpg'); /* Ensure path is correct */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0; /* Behind all pollution content */
+    border-radius: inherit; /* Inherit container rounding */
+}
+
+/* Video Embed Styles */
+.video-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Remove default iframe border */
+}
+
+
+/* Weather Section */
+.weather-current {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 15px; /* Space between items when wrapped */
+    background: linear-gradient(to right, #4a8a8a, #5aa0a0);
+    padding: 15px 25px;
+}
+.date-time { font-size: 1.3em; font-weight: bold; } /* Slightly smaller */
+.weather-desc { font-size: 1.1em; }
+.location { font-size: 1.2em; font-weight: bold; display: inline-flex; align-items: center; }
+.location i { font-size: 1em; margin-left: 8px; } /* Location icon */
+.conditions { text-align: right; font-size: 1em; line-height: 1.4; }
+
+.weather-forecast {
+    display: flex;
+    justify-content: space-around; /* Distribute space */
+    gap: 10px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.15);
+    padding: 20px 15px;
+    flex-wrap: wrap; /* Allow forecast days to wrap */
+}
+.forecast-day {
+    flex: 1; /* Allow shrinking/growing */
+    min-width: 100px; /* Minimum width for each day */
+    background-color: rgba(255, 255, 255, 0.07);
+    padding: 15px 5px;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Space when wrapped */
+}
+.forecast-day .weather-icon { /* Style weather icons */
+    font-size: 2.5em; /* Icon size */
+    margin: 10px 0;
+    display: block; /* Center icon */
+    /* Add specific colors per weather type */
+}
+.weather-icon.sunny { color: #fdd835; } /* Yellow for sunny */
+.weather-icon.cloudy { color: #bdbdbd; } /* Grey for cloudy */
+.weather-icon.thunder { color: #ffee58; } /* Yellow for thunder */
+/* Add more colors as needed */
+
+.forecast-day div:nth-child(1) { font-weight: bold; font-size: 0.9em; line-height: 1.2;} /* Date */
+.forecast-day div:nth-child(3) { font-size: 0.95em; margin-bottom: 5px;} /* Weather text */
+.forecast-day div:nth-child(4) { font-weight: bold; margin-bottom: 5px;} /* Temp */
+.forecast-day div:nth-child(5) { font-size: 0.9em; color: #add8e6; } /* Precipitation */
+
+
+/* Contacts Section */
+.contacts-box h2 { text-align: center; margin-bottom: 25px; }
+.contact-columns {
+    display: flex;
+    gap: 30px; /* Adjusted gap */
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow columns to wrap */
+}
+.contact-column {
+    flex: 1; /* Share space */
+    min-width: 250px; /* Minimum width before wrapping */
+}
+.contact-column h4 {
+    color: #aaeaea;
+    border-bottom: 1px solid #4a8a8a;
+    padding-bottom: 5px;
+    margin-bottom: 15px; /* Increased space */
+}
+.contact-column ul { margin-bottom: 15px; } /* Space between contact groups */
+
+
+/* --- Background Eye Element --- */
+.background-eye {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.06; /* Even more subtle */
+    z-index: 0; /* Behind content boxes */
+    pointer-events: none; /* Clicks pass through */
+    user-select: none; /* Prevent selection */
+}
+.background-eye.large { width: 70%; max-width: 550px; }
+.background-eye.small { width: 35%; max-width: 280px; }
+
+
+/* --- Responsive Adjustments --- */
+
+/* Medium Screens (Tablets, etc.) */
+@media (max-width: 992px) {
+    #welcome-content {
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+    .weather-forecast {
+        justify-content: flex-start; /* Align wrapped items left */
+    }
+    .forecast-day {
+        flex-basis: calc(33.33% - 10px); /* 3 per row */
+        flex-grow: 0; /* Prevent growing */
+    }
+}
+
+/* Small Screens (Tablets, large phones) */
+@media (max-width: 768px) {
+    .main-header {
+        /* Keep flex, logo area gets its own space */
+        padding: 10px 15px;
+    }
+    .logo-area { margin-bottom: 10px; width: 100%; text-align: center; } /* Center logo */
+    .header-logo { margin-right: 0; }
+    .main-nav { margin-left: 0; width: 100%; }
+    .main-nav ul { justify-content: center; } /* Center nav buttons */
+    .nav-button { font-size: 0.9em; padding: 8px 15px; }
+
+    .content-section {
+        /* Already stacking from #welcome-content rule */
+    }
+    .values-section { flex-direction: column; align-items: center; }
+    .value-text-box { flex-basis: 100%; text-align: center; }
+    .contact-columns { flex-direction: column; gap: 20px; }
+
+    .weather-current { flex-direction: column; text-align: center; gap: 10px;}
+    .conditions { text-align: center; }
+
+    .forecast-day {
+        flex-basis: calc(50% - 10px); /* 2 per row */
+    }
+
+    .pollution-container {
+         flex-direction: column; /* Stack side nav and main */
+         padding: 15px;
+    }
+    .side-nav {
+        flex-direction: row; /* Horizontal side nav */
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        flex-basis: auto; /* Reset basis */
+        margin-bottom: 15px;
+        padding: 10px 5px;
+        height: auto; /* Reset height */
+        align-self: center; /* Center it */
+    }
+    .side-nav-item { margin: 5px; } /* Spacing for horizontal items */
+    .side-nav .dots { display: inline-block; margin: 5px; } /* Show dots inline */
+
+    .aqi-grid { grid-template-columns: 1fr; } /* Single column AQI */
+
+    .background-eye.large { width: 90%; }
+    .background-eye.small { width: 50%; }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+    .main-content { padding: 15px; }
+    .content-box { padding: 15px 20px; }
+    .get-started-btn { font-size: 1em; padding: 10px 20px;}
+    .proceed-btn { font-size: 1em; padding: 8px 15px 8px 12px; }
+    .proceed-btn img { width: 24px; height: 24px; }
+    .forecast-day {
+        flex-basis: calc(50% - 10px); /* Still 2 per row, might adjust if needed */
+    }
+    .nav-button { font-size: 0.85em; padding: 6px 12px; }
+    .date-time { font-size: 1.2em; }
+    .location { font-size: 1.1em; }
+}
+
+
+/* --- DEBUGGING HIDE/SHOW --- */
+/* These rules FORCE the active section visibility. */
+/* Useful if JS logic has intermittent issues, but ideally not needed if JS is solid. */
+
+/* Rule 1: Force ALL main content sections to be hidden by default */
+.main-content > .content-section {
+    display: none !important; /* Force hide */
+    visibility: hidden !important; /* Extra precaution */
+    opacity: 0 !important; /* Hide even if positioned */
+    position: absolute !important; /* Take out of flow */
+    top: -9999px; left: -9999px; /* Move off screen */
+}
+
+/* Rule 2: Force ONLY the main section with the .active class to be visible */
+.main-content > .content-section.active {
+    display: block !important; /* Or 'flex', 'grid' if needed */
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important; /* Put back into normal flow */
+    top: 0 !important; left: 0 !important; /* Reset position */
+}

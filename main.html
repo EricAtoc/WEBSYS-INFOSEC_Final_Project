@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Wise Caloocan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-area">
+             <!-- Logo image stays -->
+            <img src="assets/icon-globe-header.png" alt="Logo" class="header-logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li>
+                    <button class="nav-button active" data-target="welcome-content">
+                        <i class="fa-solid fa-circle-info" aria-hidden="true"></i> About Us
+                    </button>
+                </li>
+                <li class="dropdown">
+                    <button class="nav-button" id="category-btn">
+                        <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i> Category
+                    </button>
+                    <div class="dropdown-content" id="category-dropdown">
+                        <button data-target="pollution-content">Pollution</button>
+                        <button data-target="weather-content">Weather</button>
+                        <button data-target="earthquake-content">Earthquake</button>
+                    </div>
+                </li>
+                <li>
+                    <button class="nav-button" data-target="weather-content">
+                         <i class="fa-solid fa-cloud-arrow-down" aria-hidden="true"></i> Updates
+                    </button>
+                </li>
+                <li>
+                    <button class="nav-button" data-target="contacts-content">
+                         <i class="fa-solid fa-headset" aria-hidden="true"></i> Contacts
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <div class="nav-end-arrow"></div>
+    </header>
+
+    <main class="main-content">
+
+        <!-- Welcome Section: Uses logos, no icon changes needed -->
+        <section id="welcome-content" class="content-section active">
+             <div class="content-box large-box welcome-box">
+                 <!-- Logo image -->
+                <h2>Welcome to <img src="assets/icon-globe-header.png" alt="Weather Wise" class="large-logo"></h2>
+                <p>A multi-purpose application where weather and any climate-base information are credibly provided and show useful guides for the safety of Caloocan and its community.</p>
+                <p>Making proper preparation is essential when it comes for emergencies, that's why this application tends to help by providing beneficial information base on realiable sources and news.</p>
+            </div>
+            <div class="content-box large-box mission-vision-box">
+                 <!-- Logo image -->
+                 <img src="assets/local-climate-logo.png" alt="Local Climate 2017-2025" class="climate-logo">
+                 <h3>Mission:</h3>
+                 <p>"Providing reliable source for better climate-base preparation"</p>
+                 <h3>Vision:</h3>
+                 <p>"Betterment of community, strengthen at best"</p>
+            </div>
+             <!-- Background image -->
+             <img src="assets/eye-background.png" alt="" class="background-eye large">
+        </section>
+
+        <!-- About Us Section: Uses logos and specific visual, no icon changes needed -->
+        <section id="about-content" class="content-section">
+            <div class="content-box full-width about-box">
+                 <!-- Logo image -->
+                 <img src="assets/logo-inline.png" alt="Weather Wise" class="inline-logo medium-logo">
+                 <h3>Mission</h3>
+                 <p>At WeatherWise, our vision is to offer credible, timely information and insights regarding climate events, weather trends, and environmental trends. We collect and compile the latest news and updates from reputable sources, giving you a full picture of the current climate landscape. Through this useful information, we hope to enable people and communities to stay informed and make choices that enhance sustainability and climate resilience.</p>
+                 <h3>Vision</h3>
+                 <p>Our vision is to become a reliable source of climate and weather news, enabling individuals to comprehend the effects of global climate phenomena. We aim to establish a platform that promotes awareness, inspires action, and facilitates informed decision-making for the protection of the environment. Through carefully selected content and climate news, we aspire to develop a global community committed to building a more sustainable and resilient world.</p>
+
+                 <div class="values-section">
+                     <div class="value-image-box">
+                          <!-- Specific visual image -->
+                         <img src="assets/eye-globe-green.png" alt="Responsibility Visual">
+                     </div>
+                     <div class="value-text-box">
+                         <h4>Responsibility</h4>
+                         <ul><li>Definition: Taking accountability for the impact of weather information and warnings on communities, businesses, and individuals.</li></ul>
+                         <h4>Accuracy</h4>
+                         <ul><li>Definition: Providing precise and reliable weather information based on the latest data and technology.</li></ul>
+                         <h4>Environmental Stewardship</h4>
+                         <ul><li>Definition: Promoting sustainability and actively working to preserve the environment in the face of changing weather patterns and climate change.</li></ul>
+                     </div>
+                 </div>
+                 <div class="comment-section">
+                     <label for="comment">Comment:</label>
+                     <textarea id="comment" placeholder="Type comment...."></textarea>
+                 </div>
+            </div>
+             <!-- Background image
+            <img src="assets/eye-background.png" alt="" class="background-eye large"> -->
+        </section>
+        <!-- Pollution Section: Update for pagination -->
+        <section id="pollution-content" class="content-section">
+            <div class="sub-nav-header">
+                <i class="fa-solid fa-smog" aria-hidden="true"></i> Pollution
+            </div>
+            <div class="pollution-container">
+                <aside class="side-nav">
+                    <!-- Ensure data-target matches the div IDs below -->
+                    <button class="side-nav-item active" data-target="pollution-page-1">1</button>
+                    <button class="side-nav-item" data-target="pollution-page-2">2</button>
+                    <button class="side-nav-item" data-target="pollution-page-3">3</button>
+                    <button class="side-nav-item" data-target="pollution-page-4">4</button>
+                    <span class="dots">...</span>
+                    <button class="side-nav-item" data-target="pollution-page-9">9</button>
+                </aside>
+                <div class="pollution-main">
+
+                    <!-- == Page 1 Content Wrapper == -->
+                    <!-- ID MUST MATCH data-target="pollution-page-1" -->
+                    <div id="pollution-page-1" class="pollution-page active">
+                        <div class="content-box aqi-box full-width">
+                            <h3>Caloocan City Air Quality Index (AQI) | Air Pollution</h3>
+                            <p class="update-time">Real-time PM2.5, PM10 air pollution level in Caloocan : Last Updated: 2025-04-07 12:25:27 PM (Local Time)</p>
+                            <div class="aqi-grid">
+                                <!-- ... AQI items ... -->
+                                <div class="aqi-item">
+                                    <i class="fa-solid fa-lungs-virus aqi-icon" aria-hidden="true"></i>
+                                    <div>Particulate Matter (PM2.5)</div>
+                                    <div class="value">25 <span class="unit">µg/m³</span></div>
+                                    <span class="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                                </div>
+                                <div class="aqi-item">
+                                    <i class="fa-solid fa-mask-face aqi-icon" aria-hidden="true"></i>
+                                    <div>Particulate Matter (PM10)</div>
+                                    <div class="value">40 <span class="unit">µg/m³</span></div>
+                                    <span class="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                                </div>
+                                <div class="aqi-item">
+                                    <i class="fa-solid fa-car-burst aqi-icon" aria-hidden="true"></i>
+                                    <div>Carbon Monoxide (CO)</div>
+                                    <div class="value">116 <span class="unit">ppb</span></div>
+                                    <span class="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                                </div>
+                                <div class="aqi-item">
+                                    <i class="fa-solid fa-industry aqi-icon" aria-hidden="true"></i>
+                                    <div>Sulfur Dioxide (SO2)</div>
+                                    <div class="value">10 <span class="unit">ppb</span></div>
+                                    <span class="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                                </div>
+                                <div class="aqi-item">
+                                    <i class="fa-solid fa-car aqi-icon" aria-hidden="true"></i>
+                                    <div>Nitrogen Dioxide (NO2)</div>
+                                    <div class="value">48 <span class="unit">ppb</span></div>
+                                    <span class="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                                </div>
+                                <div class="aqi-item">
+                                    <i class="fa-solid fa-sun aqi-icon" aria-hidden="true"></i>
+                                    <div>Ozone (O3)</div>
+                                    <div class="value">27 <span class="unit">ppb</span></div>
+                                    <span class="arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box live-aqi-summary full-width">
+                            <img src="assets/live-aqi-placeholder.png" alt="Live AQI Summary" style="width:100%; border-radius: 8px;">
+                        </div>
+                    </div> <!-- End of pollution-page-1 -->
+
+                    <!-- == Page 2 Content Wrapper == -->
+                    <!-- ID MUST MATCH data-target="pollution-page-2" -->
+                    <div id="pollution-page-2" class="pollution-page">
+                        <div class="content-box advice-box">
+                            <h4>What you can do about air pollution</h4>
+                            <ul>
+                                <li>Drive your car less.</li>
+                                <li>Keep your car in good repair.</li>
+                                <li>Turn off your engine.</li>
+                                <li>Don't burn your garbage.</li>
+                                <li>Limit backyard fires in the city.</li>
+                                <li>Plant and care for trees.</li>
+                                <li>Switch to electric or hand-powered lawn equipment.</li>
+                                <li>Use less energy.</li>
+                                <li>Become a champion for clean air.</li>
+                            </ul>
+                        </div>
+                        <div class="content-box video-box">
+                            <h4>Pro advice on reducing air pollution in Caloocan areas.</h4>
+                            <p>URL: <a href="https://www.youtube.com/watch?v=DggMi6FdZck" target="_blank">https://www.youtube.com/watch?v=DggMi6FdZck</a></p>
+                            <div class="video-embed-container">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/DggMi6FdZck" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div> <!-- End of pollution-page-2 -->
+
+                    <!-- == Placeholder Pages (Ensure IDs match data-targets) == -->
+                    <div id="pollution-page-3" class="pollution-page">
+                        <div class="content-box"><p>Content for Pollution Page 3 will go here.</p></div>
+                    </div>
+                    <div id="pollution-page-4" class="pollution-page">
+                        <div class="content-box"><p>Content for Pollution Page 4 will go here.</p></div>
+                    </div>
+                    <div id="pollution-page-9" class="pollution-page">
+                        <div class="content-box"><p>Content for Pollution Page 9 will go here.</p></div>
+                    </div>
+                    <!-- == End Placeholder Pages == -->
+
+
+                    <!-- == Common Content (Appears on all pollution pages below specific content) == -->
+                    <div class="content-box reference-box full-width">
+                        <h4>Reference:</h4>
+                        <a href="https://www.aqi.in/dashboard/philippines/caloocan/caloocan-city" target="_blank">https://www.aqi.in/dashboard/philippines/caloocan/caloocan-city</a>
+                    </div>
+
+                </div> <!-- End of pollution-main -->
+            </div> <!-- End of pollution-container -->
+            <!-- Background div stays -->
+            <div class="background-image-container pollution-bg"></div>
+        </section>
+        <!-- Weather Section: Replace icons -->
+        <section id="weather-content" class="content-section">
+             <div class="content-box weather-current full-width">
+                 <div>
+                    <div class="date-time">Monday 11:43 am</div>
+                    <div class="weather-desc">Weather: Sunny</div>
+                 </div>
+                 <div class="location">Caloocan City <!-- Replaced img with i --> <i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                 <div class="conditions">
+                     Temperature: 43°C (109.4°F) <br>
+                     Wind: 4KMPH Humidity: 70%
+                 </div>
+             </div>
+             <div class="content-box weather-forecast full-width">
+                <div class="forecast-day">
+                    <div>Monday <br> 04/07</div>
+                    <!-- Replaced img with i -->
+                    <i class="fa-solid fa-sun weather-icon sunny"></i>
+                    <div>Sunny</div>
+                    <div>43°C (109.4°F)</div>
+                    <div>10%</div>
+                </div>
+                 <div class="forecast-day">
+                    <div>Tuesday <br> 04/08</div>
+                     <!-- Replaced img with i -->
+                    <i class="fa-solid fa-cloud weather-icon cloudy"></i>
+                    <div>Cloudy</div>
+                    <div>35°C (95°F)</div>
+                    <div>55%</div>
+                </div>
+                 <div class="forecast-day">
+                    <div>Wednesday <br> 04/09</div>
+                     <!-- Replaced img with i -->
+                    <i class="fa-solid fa-cloud weather-icon cloudy"></i>
+                    <div>Cloudy</div>
+                    <div>34°C (93.2°F)</div>
+                    <div>60%</div>
+                </div>
+                 <div class="forecast-day">
+                    <div>Thursday <br> 04/10</div>
+                     <!-- Replaced img with i -->
+                    <i class="fa-solid fa-cloud-bolt weather-icon thunder"></i>
+                    <div>Thunder Storm</div>
+                    <div>32°C (89.6°F)</div>
+                    <div>94%</div>
+                </div>
+                 <div class="forecast-day">
+                    <div>Friday <br> 04/11</div>
+                     <!-- Replaced img with i -->
+                    <i class="fa-solid fa-sun weather-icon sunny"></i>
+                    <div>Sunny</div>
+                    <div>42°C (107.6°F)</div>
+                    <div>10%</div>
+                </div>
+                 <div class="forecast-day">
+                    <div>Saturday <br> 04/12</div>
+                     <!-- Replaced img with i -->
+                    <i class="fa-solid fa-sun weather-icon sunny"></i>
+                    <div>Sunny</div>
+                    <div>43°C (109.4°F)</div>
+                    <div>16%</div>
+                </div>
+                 <div class="forecast-day">
+                    <div>Sunday <br> 04/13</div>
+                     <!-- Replaced img with i -->
+                    <i class="fa-solid fa-sun weather-icon sunny"></i>
+                    <div>Sunny</div>
+                    <div>46°C (114.8°F)</div>
+                    <div>11%</div>
+                </div>
+             </div>
+              <!-- Background image -->
+             <img src="assets/eye-background.png" alt="" class="background-eye small">
+        </section>
+
+         <!-- Earthquake Section: No icons to change -->
+        <section id="earthquake-content" class="content-section">
+             <div class="content-box full-width">
+                <h2>Earthquake Information</h2>
+                <p>Earthquake data and safety tips for Caloocan will be displayed here.</p>
+                <p>(Content pending based on data sources)</p>
+            </div>
+             <!-- Background image -->
+             <img src="assets/eye-background.png" alt="" class="background-eye large">
+        </section>
+
+        <!-- Contacts Section: No icons to change -->
+        <section id="contacts-content" class="content-section">
+            <div class="content-box full-width contacts-box">
+                <h2>Contacts</h2>
+                <div class="contact-columns">
+                    <div class="contact-column">
+                        <h4>Police:</h4>
+                        <ul><li>Caloocan Police Hotline:<ul><li>163 (National Emergency Police Hotline)</li><li>02-287-2350 (Caloocan City Police Station)</li></ul></li></ul>
+                         <h4>Fire:</h4>
+                        <ul><li>Caloocan City Fire Department:<ul><li>0917-833-4071 (Mobile number for emergencies)</li><li>02-366-0425 (Landline)</li></ul></li></ul>
+                        <h4>Ambulance / Medical Emergency:</h4>
+                        <ul><li>Caloocan City Medical Services (Ambulance):<ul><li>0917-852-8520 (Emergency Medical Services)</li></ul></li></ul>
+                        <h4>Disaster Response and Rescue:</h4>
+                        <ul><li>Caloocan City Disaster Risk Reduction and Management Office (CDRRMO):<ul><li>0917-533-6572 (Mobile)</li><li>02-288-8785 (Landline)</li></ul></li></ul>
+                    </div>
+                    <div class="contact-column">
+                         <h4>Gas Leak / Hazardous Material Emergency:</h4>
+                        <ul><li>Meralco (Electricity):<ul><li>16211 (24/7 emergency hotline for electrical issues, including power outages)</li></ul></li><li>PNOC (Philippine National Oil Company):<ul><li>0917-815-5541 (For gas leaks and hazardous material emergencies)</li></ul></li></ul>
+                        <h4>General Emergency Services:</h4>
+                         <ul><li>National Emergency Hotline (Integrated Services):<ul><li>911 (This is the nationwide emergency hotline that connects you to police, fire, medical, and other emergency services)</li></ul></li></ul>
+                    </div>
+                </div>
+            </div>
+             <!-- Background image -->
+            <img src="assets/eye-background.png" alt="" class="background-eye large">
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>

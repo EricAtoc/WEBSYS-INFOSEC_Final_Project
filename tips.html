@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Wise Caloocan - Tips</title>
+    <link rel="stylesheet" href="style.css">
+     <style>
+        body.tips-page {
+            background: linear-gradient(to bottom, #2a5b5b, #1a3a3a);
+            background-color: #204848; 
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .tips-container {
+            background-color: rgba(61, 122, 122, 0.8); 
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            margin-top: 20px; 
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .tips-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+            text-align: left;
+        }
+        .tips-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .tip-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            content: url('assets/icon-arrow-right-green.png');
+        }
+         .proceed-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px 10px 15px; 
+            background-color: #1e4b4b; 
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            float: right; 
+        }
+        .proceed-btn:hover {
+            background-color: #2a6b6b;
+        }
+        .proceed-btn img {
+             width: 30px; 
+             height: 30px;
+             margin-right: 10px;
+             background-color: #fff; 
+             border-radius: 50%;
+             padding: 2px;
+             box-sizing: border-box;
+        }
+    </style>
+</head>
+<body class="tips-page">
+
+    <img src="assets/logo-header.png" alt="Weather Wise Tips Logo" class="logo-img large-logo">
+
+    <div class="tips-container">
+        <ul class="tips-list">
+            <li><span class="tip-icon"></span>The application is navigation-friendly</li>
+            <li><span class="tip-icon"></span>The category section provide list of climate related scenarios that you need</li>
+            <li><span class="tip-icon"></span>Information are updated based on current weather time</li>
+            <li><span class="tip-icon"></span>The application provide emergency contacts incase of unexpected events</li>
+            <li><span class="tip-icon"></span>Information are credible and accurate</li>
+            <li><span class="tip-icon"></span>Always turn-on the notification for daily weather updates</li>
+        </ul>
+
+        <a href="main.html" class="proceed-btn">
+            ▶️ Proceed
+        </a>
+        <div style="clear: both;"></div> 
+    </div>
+
+</body>
+</html>
